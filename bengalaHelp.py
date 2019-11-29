@@ -5,7 +5,7 @@ from Botoes import helpBotao
 from gpiozero import PWMOutputDevice
 import time
 import threading
-#import GPIO
+import RPi.GPIO as GPIO
 
 class Helps(object):
     def __init__(self, gpioMotor=4, tolerancia=8):
@@ -14,7 +14,7 @@ class Helps(object):
         self.tolerancia = tolerancia
         self.stopped = True
         self.commands = CommandsBussola()
-        self.distancia = 0.00001
+        self.distancia = 99999
 
     def getVariation(self, anguloInicial):
 
