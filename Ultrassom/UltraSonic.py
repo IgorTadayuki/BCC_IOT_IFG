@@ -27,11 +27,9 @@ class UltraSonic(object):
                 self.connect = False
 
     def get_pulse_time(self):
-        GPIO.setup(self.trig, False)
         GPIO.setup(self.trig, True)
         sleep(0.0001)
         GPIO.setup(self.trig, False)
-        GPIO.setup(self.echo, False)
 
         pulse_start = 0
         pulse_end_time = 0
