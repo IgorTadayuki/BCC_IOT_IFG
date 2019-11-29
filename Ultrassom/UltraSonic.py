@@ -8,15 +8,15 @@ class UltraSonic(object):
 
     def __init__(self):
         GPIO.setmode(GPIO.BOARD)
-        GPIO.cleanup()
         GPIO.setwarnings(False)
         
         self.trig = 10
         self.echo = 12
-        
-        GPIO.setup(self.trig, GPIO.OUT)
-        GPIO.setup(self.echo, GPIO.IN)
-        
+        try:
+            GPIO.setup(self.trig, GPIO.OUT)
+            GPIO.setup(self.echo, GPIO.IN)
+        catch:
+             GPIO.cleanup()
 
     def get_pulse_time(self):
         GPIO.setup(self.trig, False)
