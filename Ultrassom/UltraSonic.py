@@ -9,6 +9,7 @@ class UltraSonic(object):
     def __init__(self):
         GPIO.setmode(GPIO.BOARD)
         GPIO.cleanup()
+        GPIO.setwarnings(False)
         
         self.trig = 10
         self.echo = 12
