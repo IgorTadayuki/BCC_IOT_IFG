@@ -14,7 +14,7 @@ class Helps(object):
         self.tolerancia = tolerancia
         self.stopped = True
         self.commands = CommandsBussola()
-        self.distancia = 99999
+        self.distancia = 0.00001
 
     def getVariation(self, anguloInicial):
 
