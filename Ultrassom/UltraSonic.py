@@ -17,8 +17,9 @@ class UltraSonic(object):
             try:
                 GPIO.setup(self.trig, GPIO.OUT)
                 GPIO.setup(self.echo, GPIO.IN)
-            catch:
+            except:
                 GPIO.cleanup()
+            finally:
                 GPIO.setup(self.trig, GPIO.OUT)
                 GPIO.setup(self.echo, GPIO.IN)
                 self.connect = False
