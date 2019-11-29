@@ -31,6 +31,7 @@ class UltraSonic(object):
         GPIO.setup(self.trig, True)
         sleep(0.0001)
         GPIO.setup(self.trig, False)
+        GPIO.setup(self.echo, False)
 
         pulse_start = 0
         pulse_end_time = 0
