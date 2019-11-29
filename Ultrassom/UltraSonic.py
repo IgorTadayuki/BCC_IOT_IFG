@@ -10,8 +10,8 @@ class UltraSonic(object):
         GPIO.setmode(GPIO.BOARD)
         GPIO.setwarnings(False)
         
-        self.trig = 10
-        self.echo = 12
+        self.trig = 17
+        self.echo = 27
         self.connect = True
         while self.connect:
             try:
