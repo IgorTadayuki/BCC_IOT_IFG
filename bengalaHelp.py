@@ -48,6 +48,7 @@ class Helps(object):
     def atualizarDist(self, ultrassom):
         while True:
             self.distancia = ultrassom.getDist()
+            print(self.distancia)
 
     def run(self):
         # print('Started run function:')
@@ -60,8 +61,9 @@ class Helps(object):
         # print('Started main while')
 
         try:
-            t = threading.Thread(target=self.atualizarDist, args=(ultrassom,))
-            t.start()
+            #t = threading.Thread(target=self.atualizarDist, args=(ultrassom,))
+            #t.start()
+            self.atualizarDist(ultrassom)
         except:
             print("Error: unable to start thread")
 
