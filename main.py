@@ -1,5 +1,5 @@
 # from bengalaHelp import Helps
-from Ultrassom import UltraSonic
+from Ultrassom.UltraSonic import UltraSonic
 # help = Helps()
 # help.run()
 
