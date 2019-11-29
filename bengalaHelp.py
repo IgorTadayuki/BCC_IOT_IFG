@@ -5,7 +5,7 @@ from Botoes import helpBotao
 from gpiozero import PWMOutputDevice
 import time
 import threading
-import GPIO
+#import GPIO
 
 class Helps(object):
     def __init__(self, gpioMotor=4, tolerancia=8):
