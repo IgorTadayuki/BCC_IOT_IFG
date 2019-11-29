@@ -7,6 +7,8 @@ import RPi.GPIO as GPIO
 class UltraSonic(object):
 
     def __init__(self):
+        GPIO.setmode(GPIO.BOARD)
+        
         self.trig = 17
         self.echo = 27
         GPIO.setup(self.trig, GPIO.OUT)
