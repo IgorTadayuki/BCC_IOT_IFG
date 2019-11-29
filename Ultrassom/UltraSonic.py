@@ -11,8 +11,9 @@ class UltraSonic(object):
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         
-        self.trig = 17
-        self.echo = 27
+        self.trig = 27
+        self.echo = 17
+        
         self.connect = True
         while self.connect:
             try:
