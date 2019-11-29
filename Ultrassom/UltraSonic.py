@@ -12,11 +12,16 @@ class UltraSonic(object):
         
         self.trig = 10
         self.echo = 12
-        try:
-            GPIO.setup(self.trig, GPIO.OUT)
-            GPIO.setup(self.echo, GPIO.IN)
-        catch:
-             GPIO.cleanup()
+        self.connect = True
+        while self.connect:
+            try:
+                GPIO.setup(self.trig, GPIO.OUT)
+                GPIO.setup(self.echo, GPIO.IN)
+            catch:
+                GPIO.cleanup()
+                GPIO.setup(self.trig, GPIO.OUT)
+                GPIO.setup(self.echo, GPIO.IN)
+                self.connect = False
 
     def get_pulse_time(self):
         GPIO.setup(self.trig, False)
