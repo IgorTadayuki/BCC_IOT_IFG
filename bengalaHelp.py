@@ -90,6 +90,7 @@ class Helps(object):
                 respostaTatil.olhando_frente(self.distancia)
                 # anguloVertical = self.commands.getAngleVertical()
                 time.sleep(0.1)
+                print('rodando a bussola')
         except:
             print('erro na execucao')
         finally:
