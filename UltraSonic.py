@@ -79,7 +79,7 @@ class UltraSonic2(object):
         return dist
 
     def getDist(self, normal=False):
-
+        
         distInitial = 0.0
         distEnd = 0.0
         print('get dist Initial')
