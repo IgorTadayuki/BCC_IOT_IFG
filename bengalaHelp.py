@@ -52,7 +52,7 @@ class Helps(object):
 
     def run(self):
         # print('Started run function:')
-        ultrassom = UltraSonic()
+        ultrassom = UltraSonic.UltraSonic()
         # print('Started run UltraSonic:')
         respostaTatil = Vibration()
         # print('Started run Vibration:')
