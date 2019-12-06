@@ -6,4 +6,4 @@ import UltraSonic
 
 ultrassom = UltraSonic.UltraSonic()
 while True:
-  print(ultrassom.getDist())
+  print(ultrassom.getDist(True))

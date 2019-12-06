@@ -41,4 +41,4 @@ class UltraSonic(object):
         if normal:  # se quiser normalizado entre 0 e 1
             return (4 - distInitial) / (4 - 0.02)
         else:
-            return distInitial * 100
+            return distInitial
