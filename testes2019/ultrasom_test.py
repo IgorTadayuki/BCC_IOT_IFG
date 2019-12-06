@@ -1,8 +1,8 @@
 from gpiozero import InputDevice, OutputDevice
 from time import sleep, time
 
-trig = OutputDevice(27)
-echo = InputDevice(17)
+trig = OutputDevice(22)
+echo = InputDevice(27)
 
 sleep(2)
 
