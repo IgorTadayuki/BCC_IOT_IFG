@@ -1,5 +1,5 @@
 from Bussola.bussola import CommandsBussola
-from Ultrassom.UltraSonic import UltraSonic
+import UltraSonic
 from SensorVibracao.vibracaoMotor import Vibration
 from Botoes import helpBotao
 from gpiozero import PWMOutputDevice
@@ -47,7 +47,7 @@ class Helps(object):
 
     def atualizarDist(self, ultrassom):
         while True:
-            self.distancia = ultrassom.getDist()
+            self.distancia = ultrassom.getDist(True)
             #print(self.distancia)
 
     def run(self):
