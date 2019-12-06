@@ -49,6 +49,7 @@ class Helps(object):
         while True:
             self.distancia = ultrassom.getDist(True)
             #print(self.distancia)
+            print('inside a Loop')
 
     def run(self):
         # print('Started run function:')
