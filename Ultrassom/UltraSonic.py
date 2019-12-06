@@ -1,43 +1,27 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-from gpiozero import InputDevice, OutputDevice, Buzzer
+from gpiozero import InputDevice, OutputDevice
 from time import sleep, time
-from math import sin, cos
-import RPi.GPIO as GPIO
+
 
 class UltraSonic(object):
 
     def __init__(self):
-        # GPIO.setmode(GPIO.BOARD)
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setwarnings(False)
-        
-        self.trig = 27
-        self.echo = 17
-        
-        self.connect = True
-        while self.connect:
-            try:
-                GPIO.setup(self.trig, GPIO.OUT)
-                GPIO.setup(self.echo, GPIO.IN)
-            except:
-                GPIO.cleanup()
-            finally:
-                GPIO.setup(self.trig, GPIO.OUT)
-                GPIO.setup(self.echo, GPIO.IN)
-                self.connect = False
+
+        self.trig = OutputDevice(22)
+        self.echo = InputDevice(27)
 
     def get_pulse_time(self):
-        GPIO.setup(self.trig, True)
-        sleep(0.0001)
-        GPIO.setup(self.trig, False)
+        self.trig.on()
+        sleep(0.00001)
+        self.trig.off()
 
         pulse_start = 0
         pulse_end_time = 0
 
-        while GPIO.input(self.echo) == 0:
+        while self.echo.is_active == False:
             pulse_start = time()
 
-        while GPIO.input(self.echo) == 1:
+        while self.echo.is_active == True:
             pulse_end_time = time()
 
         sleep(0.06)
@@ -95,6 +79,7 @@ class UltraSonic2(object):
         return dist
 
     def getDist(self, normal=False):
+        
         distInitial = 0.0
         distEnd = 0.0
         print('get dist Initial')
@@ -109,4 +94,3 @@ class UltraSonic2(object):
             else:
                 return distEnd * 10
         return 0
-
