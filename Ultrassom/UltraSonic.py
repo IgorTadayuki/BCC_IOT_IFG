@@ -38,16 +38,11 @@ class UltraSonic(object):
         distEnd = 0.0
         print('get dist Initial')
         distInitial = round(self.calculate_distance(self.get_pulse_time()), 2)
-        sleep(0.06)
-        distEnd = round(self.calculate_distance(self.get_pulse_time()), 2)
-        print('if get Dist')
-        if abs(distEnd - distInitial) >= 0.02 and distEnd < 4:  # tolerancia de erro do sensor
 
-            if normal:  # se quiser normalizado entre 0 e 1
-                return (4 - distEnd) / (4 - 0.02)
-            else:
-                return distEnd * 10
-        return 0
+        if normal:  # se quiser normalizado entre 0 e 1
+            return (4 - distInitial) / (4 - 0.02)
+        else:
+            return distInitial
 
 class UltraSonic2(object):
 
