@@ -53,15 +53,11 @@ class Helps(object):
             print('inside a Loop')
 
     def run(self):
-        # print('Started run function:')
         ultrassom = UltraSonic.UltraSonic()
-        # print('Started run UltraSonic:')
         respostaTatil = Vibration()
-        # print('Started run Vibration:')
         botaoPressionado = True
         botaoPressionadoAnterior = False
-        # print('Started main while')
-
+        
         try:
             t = threading.Thread(target=self.atualizarDist, args=(ultrassom,))
             t.start()
@@ -82,16 +78,16 @@ class Helps(object):
                     # print('angulo inicial:' + str(anguloInicial))
                     vibrationValue = self.getVariation(anguloInicial)
                     # print('vibrationValue:' + str(vibrationValue))
-                    print('emite_vibracao_linha_reta' + str(vibrationValue))
+        #            print('emite_vibracao_linha_reta' + str(vibrationValue))
                     respostaTatil.emite_vibracao_linha_reta(vibrationValue)
                 else:
                     respostaTatil.emite_vibracao_linha_reta(0.001)
                     botaoPressionadoAnterior = False
-                print('distancia:' + str(self.distancia))
+         #       print('distancia:' + str(self.distancia))
                 respostaTatil.olhando_frente(self.distancia)
                 # anguloVertical = self.commands.getAngleVertical()
                 time.sleep(0.1)
-                print('rodando a bussola')
+          #      print('rodando a bussola')
         except:
             print('erro na execucao')
         finally:
