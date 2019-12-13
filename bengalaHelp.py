@@ -48,9 +48,9 @@ class Helps(object):
     def atualizarDist(self, ultrassom):
         while True:
             # self.distancia = ultrassom.getDist(True)
-            self.distancia = ultrassom.getDist()
-            #print(self.distancia)
-            print('inside a Loop')
+            self.distancia = ultrassom.getDist(True)
+            print("Distancia Norm: " + str(self.distancia))
+            #print('inside a Loop')
 
     def run(self):
         # print('Started run function:')
